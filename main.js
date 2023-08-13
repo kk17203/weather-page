@@ -6,7 +6,8 @@ async function getWeather() {
     let searchValue = searchInput.value;
 
     const weatherAPI = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${searchValue}`
+        `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${searchValue}`,
+        { mode: "cors" }
     );
     const weather = await weatherAPI.json();
     console.log(weather);
