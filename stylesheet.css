@@ -47,16 +47,16 @@ h1 {
 }
 
 .body-content {
-    display: grid;
-    grid-template-rows: 50px calc(100vh - 100px) 50px;
+    /* display: grid; */
+    /* grid-template-rows: 50px calc(100vh - 100px) 50px; */
 }
 
 .main {
     display: grid;
     justify-content: center;
     grid-template-rows: 50px 1fr;
-    /* min-height: calc(100% - 50px); */
-    min-height: 100%;
+    min-height: calc(100vh - 50px);
+    /* min-height: 100%; */
 }
 
 .location {
