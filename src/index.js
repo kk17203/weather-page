@@ -1,11 +1,12 @@
 import { getWeather } from "./getWeather";
 
 const searchButton = document.querySelector(".searchBtn");
-const searchBar = document.querySelector(".search-form");
+const searchForm = document.querySelector(".search-form");
+const searchInput = document.querySelector("#search");
 
-searchBar.addEventListener("submit", (e) => {
+searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    e.blur();
+    searchInput.blur();
 });
 
 getWeather();
