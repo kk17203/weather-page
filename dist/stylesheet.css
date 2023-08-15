@@ -3,22 +3,35 @@ html {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
+    height: 100%;
 }
 
 .header {
     background-color: rgb(255, 102, 0);
     align-items: center;
     display: grid;
-    grid-template-columns: 1fr;
-    padding-bottom: 15px;
+    height: 50px;
+    position: sticky;
+    top: 0;
 }
 
 h1 {
     display: grid;
     justify-content: center;
+    font-size: 1.5rem;
 }
 
-.searchBar {
+.footer {
+    background-color: rgb(255, 102, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: sticky; */
+    /* bottom: 0; */
+    height: 50px;
+}
+
+.search-form {
     display: flex;
     justify-content: center;
 }
@@ -33,9 +46,17 @@ h1 {
     justify-content: center;
 }
 
+.body-content {
+    display: grid;
+    grid-template-rows: 50px calc(100vh - 100px) 50px;
+}
+
 .main {
     display: grid;
     justify-content: center;
+    grid-template-rows: 50px 1fr;
+    /* min-height: calc(100% - 50px); */
+    min-height: 100%;
 }
 
 .location {
