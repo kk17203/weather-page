@@ -5,6 +5,7 @@ const searchBar = document.querySelector(".search-form");
 
 searchBar.addEventListener("submit", (e) => {
     e.preventDefault();
+    e.blur();
 });
 
 getWeather();
