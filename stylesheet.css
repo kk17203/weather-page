@@ -10,13 +10,22 @@ html {
     background-color: rgb(255, 102, 0);
     align-items: center;
     display: grid;
+    grid-template-columns: 1fr 1fr;
     height: 50px;
+    padding: 0px 10px 0px 10px;
 }
 
 h1 {
     display: grid;
-    justify-content: center;
+    justify-content: start;
     font-size: 1.5rem;
+}
+
+.location {
+    display: flex;
+    justify-content: end;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .footer {
@@ -35,7 +44,7 @@ h1 {
     justify-content: center;
 }
 
-#search {
+#search-input {
     width: 150px;
 }
 
@@ -45,29 +54,33 @@ h1 {
     justify-content: center;
 }
 
-.body-content {
-    /* display: grid; */
-    /* grid-template-rows: 50px calc(100vh - 100px) 50px; */
-}
-
 .main {
-    display: flex;
-    flex-direction: column;
     margin: 15px;
 }
 
-.location {
+.cards-container {
     display: grid;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.days {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 
-/* .todayTemp,
-.tomorrowTemp {
-} */
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr repeat(3, 30px);
+    background-color: rgb(161, 159, 159);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    font-size: 1.5rem;
+}
+
+.condition-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
