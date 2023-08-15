@@ -42,7 +42,7 @@ h1 {
 
 .searchBtn {
     width: 50px;
-    display: grid;
+    display: none;
     justify-content: center;
 }
 
@@ -52,16 +52,19 @@ h1 {
 }
 
 .main {
-    display: grid;
-    justify-content: center;
-    grid-template-rows: 50px 1fr;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* grid-template-rows: 50px 1fr; */
     min-height: calc(100vh - 50px);
     /* min-height: 100%; */
+    margin: 15px;
 }
 
 .location {
     display: grid;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .days {
