@@ -1,91 +1,98 @@
 function displayWeather(weather) {
     const locationHeader = document.querySelector(".location");
-    const todayWeather = document.querySelector(".todayWeather");
-    const tomorrowWeather = document.querySelector(".tomorrowWeather");
-    todayWeather.innerHTML = "";
-    tomorrowWeather.innerHTML = "";
+    const cards = document.querySelector(".cards-container");
 
     locationHeader.textContent = `${weather.location.name}, ${weather.location.region}`;
 
-    const todayHeader = document.createElement("h3");
-    todayHeader.classList.add("today");
+    const todayCard = document.createElement("div");
+    todayCard.classList.add("todayCard");
+    todayCard.classList.add("card");
+    cards.appendChild(todayCard);
+
+    const todayHeader = document.createElement("span");
+    todayHeader.classList.add("card-header");
     todayHeader.textContent = "Today";
-    todayWeather.appendChild(todayHeader);
+    todayCard.appendChild(todayHeader);
+
+    const img = document.createElement("img");
+    img.classList.add("condition-img");
+    img.src = weather.current.condition.icon;
+    todayCard.appendChild(img);
 
     const currentTemp = document.createElement("div");
     currentTemp.classList.add("currentTemp");
     currentTemp.textContent = `Current Temp: ${weather.current.temp_f}`;
-    todayWeather.appendChild(currentTemp);
+    todayCard.appendChild(currentTemp);
 
     const currentFeelsLike = document.createElement("div");
     currentFeelsLike.classList.add("currentFeelsLike");
     currentFeelsLike.textContent = `Current Feels Like: ${weather.current.feelslike_f}`;
-    todayWeather.appendChild(currentFeelsLike);
+    todayCard.appendChild(currentFeelsLike);
 
     const condition = document.createElement("div");
     condition.classList.add("condition");
     condition.textContent = `Condition: ${weather.current.condition.text}`;
-    todayWeather.appendChild(condition);
-
-    const img = document.createElement("img");
-    img.classList.add("conditionImg");
-    img.src = weather.current.condition.icon;
-    todayWeather.appendChild(img);
+    todayCard.appendChild(condition);
 
     const windDirection = document.createElement("div");
     windDirection.classList.add("windDirection");
     windDirection.textContent = `Wind Direction: ${weather.current.wind_dir}`;
-    todayWeather.appendChild(windDirection);
+    todayCard.appendChild(windDirection);
 
     const windSpeed = document.createElement("div");
     windSpeed.classList.add("windSpeed");
     windSpeed.textContent = `Wind Speed: ${weather.current.wind_mph} mph`;
-    todayWeather.appendChild(windSpeed);
+    todayCard.appendChild(windSpeed);
 
     const windGust = document.createElement("div");
     windGust.classList.add("windGust");
     windGust.textContent = `Wind Gust: ${weather.current.gust_mph} mph`;
-    todayWeather.appendChild(windGust);
+    todayCard.appendChild(windGust);
 
-    const tomorrowWeatherHeader = document.createElement("h3");
-    tomorrowWeatherHeader.classList.add("tomorrow");
-    tomorrowWeatherHeader.textContent = "Tomorrow";
-    tomorrowWeather.appendChild(tomorrowWeatherHeader);
+    const tomorrowCard = document.createElement("div");
+    tomorrowCard.classList.add("tomorrowCard");
+    tomorrowCard.classList.add("card");
+    cards.appendChild(tomorrowCard);
 
-    const tomorrowMaxTemp = document.createElement("div");
-    tomorrowMaxTemp.classList.add("tomorrowMaxTemp");
-    tomorrowMaxTemp.textContent = `Max Temp: ${weather.forecast.forecastday[0].day.maxtemp_f}`;
-    tomorrowWeather.appendChild(tomorrowMaxTemp);
-
-    const tomorrowMinTemp = document.createElement("div");
-    tomorrowMinTemp.classList.add("tomorrowMinTemp");
-    tomorrowMinTemp.textContent = `Min Temp: ${weather.forecast.forecastday[0].day.mintemp_f}`;
-    tomorrowWeather.appendChild(tomorrowMinTemp);
-
-    const tomorrowCondition = document.createElement("div");
-    tomorrowCondition.classList.add("tomorrowCondition");
-    tomorrowCondition.textContent = `Condition: ${weather.forecast.forecastday[0].day.condition.text}`;
-    tomorrowWeather.appendChild(tomorrowCondition);
+    const tomorrowHeader = document.createElement("span");
+    tomorrowHeader.classList.add("card-header");
+    tomorrowHeader.textContent = "Tomorrow";
+    tomorrowCard.appendChild(tomorrowHeader);
 
     const tomorrowImg = document.createElement("img");
     tomorrowImg.classList.add("tomorrowConditionImg");
     tomorrowImg.src = weather.forecast.forecastday[0].day.condition.icon;
-    tomorrowWeather.appendChild(tomorrowImg);
+    tomorrowCard.appendChild(tomorrowImg);
+
+    const tomorrowMaxTemp = document.createElement("div");
+    tomorrowMaxTemp.classList.add("tomorrowMaxTemp");
+    tomorrowMaxTemp.textContent = `Max Temp: ${weather.forecast.forecastday[0].day.maxtemp_f}`;
+    tomorrowCard.appendChild(tomorrowMaxTemp);
+
+    const tomorrowMinTemp = document.createElement("div");
+    tomorrowMinTemp.classList.add("tomorrowMinTemp");
+    tomorrowMinTemp.textContent = `Min Temp: ${weather.forecast.forecastday[0].day.mintemp_f}`;
+    tomorrowCard.appendChild(tomorrowMinTemp);
+
+    const tomorrowCondition = document.createElement("div");
+    tomorrowCondition.classList.add("tomorrowCondition");
+    tomorrowCondition.textContent = `Condition: ${weather.forecast.forecastday[0].day.condition.text}`;
+    tomorrowCard.appendChild(tomorrowCondition);
 
     const tomorrowChangeOfRain = document.createElement("div");
     tomorrowChangeOfRain.classList.add("tomorrowChangeOfRain");
     tomorrowChangeOfRain.textContent = `Chance of Rain: ${weather.forecast.forecastday[0].day.daily_chance_of_rain}%`;
-    tomorrowWeather.appendChild(tomorrowChangeOfRain);
+    tomorrowCard.appendChild(tomorrowChangeOfRain);
 
     const tomorrowSunrise = document.createElement("div");
     tomorrowSunrise.classList.add("tomorrowSunrise");
     tomorrowSunrise.textContent = `Sunrise: ${weather.forecast.forecastday[0].astro.sunrise}`;
-    tomorrowWeather.appendChild(tomorrowSunrise);
+    tomorrowCard.appendChild(tomorrowSunrise);
 
     const tomorrowSunset = document.createElement("div");
     tomorrowSunset.classList.add("tomorrowSunset");
     tomorrowSunset.textContent = `Sunset: ${weather.forecast.forecastday[0].astro.sunset}`;
-    tomorrowWeather.appendChild(tomorrowSunset);
+    tomorrowCard.appendChild(tomorrowSunset);
 }
 
 export { displayWeather };

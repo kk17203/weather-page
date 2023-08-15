@@ -1,7 +1,7 @@
 import { displayWeather } from "./renderUI.js";
 
 const apiKey = "8251eb5f36e4482b9c1172244230608";
-const searchInput = document.querySelector("#search");
+const searchInput = document.querySelector("#search-input");
 
 async function getWeather() {
     let searchValue = searchInput.value;

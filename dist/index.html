@@ -10,18 +10,19 @@
         <div class="body-content">
             <div class="header">
                 <h1>Weather Page</h1>
+                <span class="location"></span>
             </div>
             <div class="main">
-                <h2 class="location"></h2>
-                <div class="days">
-                    <div class="todayWeather"></div>
-                    <div class="tomorrowWeather"></div>
-                </div>
+                <div class="cards-container"></div>
             </div>
             <div class="footer">
                 <form action="" class="search-form">
                     <label for="search" class="search-bar">
-                        <input type="text" id="search" value="Bolivar, Mo" />
+                        <input
+                            type="text"
+                            id="search-input"
+                            value="Bolivar, Mo"
+                        />
                     </label>
                     <button class="searchBtn">Search</button>
                 </form>
