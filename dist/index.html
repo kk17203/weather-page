@@ -4,16 +4,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="stylesheet.css" />
-        <script src="main.js" defer></script>
         <title>Weather Page</title>
     </head>
     <body>
         <div class="header">
             <h1>Weather Page</h1>
-            <label for="search" class="searchBar">
-                <input type="text" id="search" value="Bolivar, Mo" />
+            <form action="" class="search-form">
+                <label for="search" class="searchBar">
+                    <input type="text" id="search" value="Bolivar, Mo" />
+                </label>
                 <button class="searchBtn">Search</button>
-            </label>
+            </form>
         </div>
         <div class="main">
             <h2 class="location"></h2>
@@ -22,5 +23,6 @@
                 <div class="tomorrowWeather"></div>
             </div>
         </div>
+        <script type="module" src="./main.js"></script>
     </body>
 </html>
