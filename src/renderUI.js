@@ -2,6 +2,8 @@ function displayWeather(weather) {
     const locationHeader = document.querySelector(".location");
     const cards = document.querySelector(".cards-container");
 
+    cards.innerHTML = "";
+
     locationHeader.textContent = `${weather.location.name}, ${weather.location.region}`;
 
     const todayCard = document.createElement("div");

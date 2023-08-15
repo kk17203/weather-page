@@ -14,6 +14,8 @@ async function getWeather() {
     console.log(weather);
 
     displayWeather(weather);
+    searchInput.value = "";
+    searchInput.placeholder = "Search for a city";
 }
 
 export { getWeather };
