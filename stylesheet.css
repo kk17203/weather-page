@@ -11,8 +11,8 @@ html {
     align-items: center;
     display: grid;
     height: 50px;
-    position: sticky;
-    top: 0;
+    /* position: sticky; */
+    /* top: 0; */
 }
 
 h1 {
