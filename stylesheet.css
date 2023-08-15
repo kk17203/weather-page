@@ -22,13 +22,14 @@ h1 {
 }
 
 .footer {
-    background-color: rgb(255, 102, 0);
+    background-color: rgb(247, 169, 117);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     height: 50px;
+    width: 100%;
 }
 
 .search-form {
@@ -56,7 +57,7 @@ h1 {
     flex-direction: column;
     /* justify-content: center; */
     /* grid-template-rows: 50px 1fr; */
-    min-height: calc(100vh - 50px);
+    /* min-height: calc(100vh - 50px); */
     /* min-height: 100%; */
     margin: 15px;
 }
