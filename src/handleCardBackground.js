@@ -1,8 +1,5 @@
-// const card = document.querySelector(".card");
 const cards = document.querySelector(".cards-container");
 const cardDivs = cards.querySelectorAll(".cards-background");
-
-// const condition = document.querySelector(".condition");
 
 function renderCardBackground(cardDivs) {
     cardDivs.forEach((cardDiv) => {
@@ -25,11 +22,8 @@ function renderCardBackground(cardDivs) {
     });
 }
 
-// function renderCardBackground(cardDivs) {
-//     cardDivs.forEach((cardDiv) => {
-//         cardDiv.style.backgroundImage = "url('images/rain.jpg')";
-//         cardDiv.style.backgroundSize = "cover";
-//     });
-// }
-
 export { renderCardBackground };
+
+// Find img for:
+// Mist
+// light rain
