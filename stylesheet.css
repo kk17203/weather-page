@@ -63,16 +63,27 @@ h1 {
     gap: 10px;
 }
 
+.cards-background {
+    position: relative;
+}
+
 .card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr repeat(3, 30px);
-    /* background-color: rgb(161, 159, 159); */
+    grid-template-rows: 40px repeat(3, 30px);
     border-radius: 5px;
     padding: 10px;
-    /* background-image: url(images/partly-sunny.jpg); */
-    /* background-size: cover; */
-    /* background-position: center; */
+    background-color: rgba(0, 60, 255, 0.493);
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    width: 40%;
+    color: white;
+}
+
+.info {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
 .card-header {
@@ -80,6 +91,8 @@ h1 {
     justify-content: start;
     align-items: start;
     font-size: 1.5rem;
+    font-weight: 500;
+    grid-column: 1 / -1;
 }
 
 .condition-img {
