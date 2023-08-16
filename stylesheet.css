@@ -74,7 +74,7 @@ h1 {
 
 .card {
     display: grid;
-    grid-template-rows: 40px repeat(3, 30px);
+    grid-template-rows: 40px repeat(5, 30px);
     border-radius: 5px;
     padding: 10px;
     background-color: rgba(0, 60, 255, 0.493);
