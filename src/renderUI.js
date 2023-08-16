@@ -1,4 +1,4 @@
-// import { renderCardBackground } from "./handleCardBackground";
+import { renderCardBackground } from "./handleCardBackground";
 
 function displayWeather(weather) {
     const locationHeader = document.querySelector(".location");
@@ -9,6 +9,7 @@ function displayWeather(weather) {
     locationHeader.textContent = `${weather.location.name}, ${weather.location.region}`;
 
     // Handle today card
+
     const conditionText = weather.current.condition.text.replace(/\s/g, "-");
 
     const todayCardsBackground = document.createElement("div");
@@ -24,10 +25,6 @@ function displayWeather(weather) {
     todayHeader.textContent = "Today";
     todayCard.appendChild(todayHeader);
 
-    // const img = document.createElement("img");
-    // img.classList.add("condition-img", "info");
-    // img.src = weather.current.condition.icon;
-    // todayCard.appendChild(img);
     const currentFeelsLike = document.createElement("div");
     currentFeelsLike.classList.add("currentFeelsLike", "info");
     currentFeelsLike.textContent = `Feels Like: ${weather.current.feelslike_f} °F`;
@@ -43,22 +40,8 @@ function displayWeather(weather) {
     condition.textContent = `${weather.current.condition.text}`;
     todayCard.appendChild(condition);
 
-    // const windDirection = document.createElement("div");
-    // windDirection.classList.add("windDirection", "info");
-    // windDirection.textContent = `Wind Direction: ${weather.current.wind_dir}`;
-    // todayCard.appendChild(windDirection);
-
-    // const windSpeed = document.createElement("div");
-    // windSpeed.classList.add("windSpeed", "info");
-    // windSpeed.textContent = `Wind Speed: ${weather.current.wind_mph} mph`;
-    // todayCard.appendChild(windSpeed);
-
-    // const windGust = document.createElement("div");
-    // windGust.classList.add("windGust", "info");
-    // windGust.textContent = `Wind Gust: ${weather.current.gust_mph} mph`;
-    // todayCard.appendChild(windGust);
-
     // Handle tomorrow card
+
     const tomorrowConditionText =
         weather.forecast.forecastday[0].day.condition.text.replace(/\s/g, "-");
 
@@ -77,11 +60,6 @@ function displayWeather(weather) {
     tomorrowHeader.classList.add("card-header", "info");
     tomorrowHeader.textContent = "Tomorrow";
     tomorrowCard.appendChild(tomorrowHeader);
-
-    // const tomorrowImg = document.createElement("img");
-    // tomorrowImg.classList.add("tomorrowConditionImg", "info");
-    // tomorrowImg.src = weather.forecast.forecastday[0].day.condition.icon;
-    // tomorrowCard.appendChild(tomorrowImg);
 
     const tomorrowMaxTemp = document.createElement("div");
     tomorrowMaxTemp.classList.add("tomorrowMaxTemp", "info");
@@ -114,28 +92,6 @@ function displayWeather(weather) {
     tomorrowCard.appendChild(tomorrowSunset);
 
     const cardDivs = cards.querySelectorAll(".cards-background");
-    function renderCardBackground(cardDivs) {
-        cardDivs.forEach((cardDiv) => {
-            cardDiv.style.backgroundSize = "cover";
-            cardDiv.style.backgroundPosition = "center";
-
-            if (cardDiv.classList.contains("Sunny")) {
-                cardDiv.style.backgroundImage = "url('images/sunny.jpg')";
-            } else if (cardDiv.classList.contains("Partly-cloudy")) {
-                cardDiv.style.backgroundImage =
-                    "url('images/partly-cloudy.jpg')";
-            } else if (cardDiv.classList.contains("Overcast")) {
-                cardDiv.style.backgroundImage =
-                    "url('images/partly-cloudy.jpg')";
-            } else if (cardDiv.classList.contains("Clear")) {
-                cardDiv.style.backgroundImage = "url('images/clear-sky.jpg')";
-            } else if (cardDiv.classList.contains("Heavy-rain")) {
-                cardDiv.style.backgroundImage = "url('images/stormy.jpg')";
-            } else if (cardDiv.classList.toString().includes("rain")) {
-                cardDiv.style.backgroundImage = "url('images/rain.jpg')";
-            }
-        });
-    }
     renderCardBackground(cardDivs);
 }
 
