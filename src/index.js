@@ -1,4 +1,4 @@
-import { getWeather } from "./getWeather";
+import { getWeather, getTodayWeather, getTomorrowWeather } from "./getWeather";
 
 const searchButton = document.querySelector(".searchBtn");
 const searchForm = document.querySelector(".search-form");
@@ -14,3 +14,9 @@ searchForm.addEventListener("submit", (e) => {
 getWeather();
 
 searchButton.addEventListener("click", getWeather);
+
+const todayBtn = document.querySelector(".today-btn");
+todayBtn.addEventListener("click", getTodayWeather);
+
+const tomorrowBtn = document.querySelector(".tomorrow-btn");
+tomorrowBtn.addEventListener("click", getTomorrowWeather);
