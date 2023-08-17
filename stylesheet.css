@@ -35,7 +35,7 @@ h1 {
 .footer {
     background-color: rgb(12, 146, 199);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     position: fixed;
     bottom: 0;
